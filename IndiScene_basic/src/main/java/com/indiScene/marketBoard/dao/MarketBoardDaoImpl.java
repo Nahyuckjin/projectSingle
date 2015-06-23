@@ -26,7 +26,7 @@ public class MarketBoardDaoImpl implements MarketBoardDao {
 		HashMap<String, Integer> hMap=new HashMap<String,Integer>();
 		hMap.put("startRow",startRow);
 		hMap.put("endRow", endRow);
-		return sqlSession.selectList("marketBoardList", hMap); //SelectList Dto를 자동으로 받아서 ㅃ려주는 역할  
+		return sqlSession.selectList("marketBoardList", hMap); //SelectList Dto를 자동으로 받아서 려주는 역할  
 	}
 
 }

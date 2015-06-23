@@ -43,13 +43,18 @@ public class MarketBoardServiceImpl implements MarketBoardService {
 		
 		List<MarketBoardDto> marketList=null;
 		
-		if(count >0) marketList=marketBoardDao.getMarketList(startRow,endRow);
-		logger.info("marketList" + marketList.size());
+		if(count >0) {
+			marketList=marketBoardDao.getMarketList(startRow,endRow);
+			logger.info("marketList" + marketList.size());
+		}
+		
 		
 		mav.addObject("list", marketList);
 		mav.addObject("count", count);
 		mav.addObject("boardSize", boardSize);
 		mav.addObject("currentPage",currentPage);
+		
+		mav.setViewName("marketBoard/list.jsp");
 		
 	}
 	

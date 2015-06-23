@@ -9,4 +9,6 @@ public interface MarketBoardDao {
 	public int getCount();
 	
 	public List<MarketBoardDto> getMarketList(int startRow,int endRow);
+	
+	
 }
