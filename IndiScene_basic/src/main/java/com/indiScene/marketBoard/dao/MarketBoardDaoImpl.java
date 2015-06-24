@@ -18,7 +18,7 @@ public class MarketBoardDaoImpl implements MarketBoardDao {
 	@Override
 	public int getCount() {
 		System.out.println("daoImpl");
-		return sqlSession.selectOne("marketBoardCount");
+		return sqlSession.selectOne("dao.marketBoardMapper.boardCount");
 	}
 
 	@Override
@@ -26,7 +26,24 @@ public class MarketBoardDaoImpl implements MarketBoardDao {
 		HashMap<String, Integer> hMap=new HashMap<String,Integer>();
 		hMap.put("startRow",startRow);
 		hMap.put("endRow", endRow);
-		return sqlSession.selectList("marketBoardList", hMap); //SelectList Dto를 자동으로 받아서 려주는 역할  
+		return sqlSession.selectList("dao.marketBoardMapper.boardList", hMap); //SelectList Dto를 자동으로 받아서 려주는 역할  
+	}
+
+	@Override
+	public int insert(MarketBoardDto marketBoardDto) {
+		return sqlSession.insert("dao.marketBoardMapper.boardInsert", marketBoardDto);
+	}
+
+	@Override
+	public MarketBoardDto read(String boardNumber) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("dao.marketBoardMapper.boardRead", boardNumber);
+	}
+
+	@Override
+	public int count(String boardNumber) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("dao.marketBoardMapper.readCount", boardNumber);
 	}
 
 }

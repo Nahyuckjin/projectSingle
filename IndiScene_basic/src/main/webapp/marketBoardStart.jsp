@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<a href="${root}/marketBoard/write.do">거래게시판 글쓰기</a>
+<a href="${root}/marketBoard/enterBoard.do">거래게시판 들어가기</a>
+
+
 
 </body>
 </html>
