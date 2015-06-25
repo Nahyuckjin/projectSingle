@@ -18,6 +18,6 @@ insert into artist(ARTIST_ID,ATIST_PASSWORD,ARTIST_NAME,ARTIST_NICKNAME,ARTIST_P
  
  select * from marketboard where board_num='m6'
  
- alter table marketboard modify(content VARCHAR2(2000));
+ alter table marketboard modify(content VARCHAR2(4000));
  
  		update marketboard set nvl(count,0)=count+1 where board_num='m3'

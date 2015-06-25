@@ -20,8 +20,8 @@
 	
 	<insert id="boardInsert" parameterType="com.indiScene.marketBoard.dto.MarketBoardDto">
 		<![CDATA[
-		insert into marketboard(SUBJECT,CONTENT,REGISTER_DATE,BOARD_NUM,ARTIST_ID) 
-		values(#{subject},#{content},#{register_date},'m' || marketboard_seq.nextval,#{artist_id})
+		insert into marketboard(SUBJECT,CONTENT,REGISTER_DATE,BOARD_NUM,ARTIST_ID,COUNT) 
+		values(#{subject},#{content},#{register_date},'m' || marketboard_seq.nextval,#{artist_id},0)
 		]]>
 	</insert>
 	

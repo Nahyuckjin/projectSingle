@@ -2,6 +2,12 @@ package com.indiScene.marketBoard.dto;
 
 import java.util.Date;
 
+/**
+@name  : MarketBoardDto
+@date  : 2015. 6. 25.
+@auther: 나혁진
+@description :거래 게시판 db를 처리하기위한 dto
+ */
 public class MarketBoardDto {
 	private String board_num;
 	private String zipcode;

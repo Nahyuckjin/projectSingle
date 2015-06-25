@@ -13,7 +13,7 @@
 </head>
 <body>
 <div> 
-		<input type="button" value="글쓰기 " onclick="location.href='${root}/marketBoard/enterBoard.do'"/>
+		<input type="button" value="글쓰기 " onclick="location.href='${root}/marketBoard/write.do'"/>
 
 		<c:forEach var="market" items="${list }">
 			<div class="form_style" style="height:130px;">

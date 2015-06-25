@@ -9,6 +9,12 @@ import org.springframework.stereotype.Component;
 
 import com.indiScene.marketBoard.dto.MarketBoardDto;
 
+/**
+@name  : MarketBoardDaoImpl
+@date  : 2015. 6. 25.
+@auther: 나혁진
+@description : 거래게시판 비지니스 로직에 접근하기위한 dao
+ */
 @Component
 public class MarketBoardDaoImpl implements MarketBoardDao {
 	
@@ -26,7 +32,8 @@ public class MarketBoardDaoImpl implements MarketBoardDao {
 		HashMap<String, Integer> hMap=new HashMap<String,Integer>();
 		hMap.put("startRow",startRow);
 		hMap.put("endRow", endRow);
-		return sqlSession.selectList("dao.marketBoardMapper.boardList", hMap); //SelectList Dto를 자동으로 받아서 려주는 역할  
+		
+		return sqlSession.selectList("dao.marketBoardMapper.boardList", hMap); //SelectList Dto瑜� �옄�룞�쑝濡� 諛쏆븘�꽌 �젮二쇰뒗 �뿭�븷  
 	}
 
 	@Override
@@ -36,14 +43,11 @@ public class MarketBoardDaoImpl implements MarketBoardDao {
 
 	@Override
 	public MarketBoardDto read(String boardNumber) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne("dao.marketBoardMapper.boardRead", boardNumber);
 	}
 
 	@Override
 	public int count(String boardNumber) {
-		// TODO Auto-generated method stub
 		return sqlSession.insert("dao.marketBoardMapper.readCount", boardNumber);
 	}
-
 }

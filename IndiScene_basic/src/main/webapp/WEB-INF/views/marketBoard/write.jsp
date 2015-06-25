@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>거래 게시판 글쓰기 </title>
 <script src="${root }/resources/ckEditor/ckeditor.js"></script>
+<script src="${root }/resources/ckfinder/ckfinder.js"></script>
 	<script type="text/javascript" src="${root }/css/marketBoard/script.js"></script>
 	<!--  <link rel="stylesheet" type="text/css" href="${root }/css/marketBoard/style.css"/>-->
 </head>
@@ -36,7 +37,15 @@
 			<span class="content" >
 				<textarea  name="content" ></textarea>		
 			<script >
-				CKEDITOR.replace('content');
+				
+				 CKEDITOR.replace( 'content',
+						 {///IndiScene_basic/src/main/webapp/resources/ckfinder
+						 	filebrowserBrowseUrl : '/resources/ckfinder/ckfinder.html',
+						 	filebrowserImageBrowseUrl : '/resources/ckfinder/ckfinder.html?type=Images',
+						 	filebrowserFlashBrowseUrl : '/resources/ckfinder/ckfinder.html?type=Flash',
+						 	
+						 	filebrowserUploadUrl: '${root}/marketBoard/fileUpload.do' // 파일 업로드를 처리 할 경로 설정.
+						 });
 	  	</script>
 			</span>
 		</div>	
